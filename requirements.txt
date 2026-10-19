@@ -2,3 +2,6 @@ streamlit
 pdfplumber
 scikit-learn
 pandas
+gradio
+sentence-transformers
+torch

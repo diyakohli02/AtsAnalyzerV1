@@ -2,6 +2,7 @@ import gradio as gr
 import pdfplumber
 from sentence_transformers import SentenceTransformer, util
 import re
+import os
 
 print("Loading AI Semantic Model & Skill Taxonomy Engine...")
 model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -180,4 +181,5 @@ with gr.Blocks(css=custom_css, title="Advanced ATS Analyzer") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    port = int(os.environ.get("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port)
